@@ -1,15 +1,20 @@
 #!/usr/bin/env python3
 
 """
-GitHub API Application: Custom Exception Classes
+Generic exception hierarchy - reduces GitHub-specific coupling
 """
+class RepositoryException(Exception):
+    """Base exception for repository operations"""
+    pass
 
-class GitHubApiException(Exception):
 
+class RateLimitException(RepositoryException):
+    """Raised when rate limit is hit"""
+    def __init__(self):
+        super().__init__("Rate limit reached. Please wait a minute and try again.")
+
+
+class DataSourceException(RepositoryException):
+    """Generic data source error"""
     def __init__(self, status_code):
-        if status_code == 403:
-            message = "Rate limit reached. Please wait a minute and try again."
-        else:
-            message = f"HTTP Status Code was: {status_code}."
-
-        super().__init__("A GitHub API Error Occurred: " + message)
+        super().__init__(f"HTTP Status Code was: {status_code}.")

@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 
 """
-GitHub API Application: Custom Model Classes
+Data models - focused solely on representing data
 """
-
-class GitHubRepo:
-    """
-    A class used to represent a single GitHub Repository.
-    """
-
+class Repository:
+    """Represents a single repository"""
     def __init__(self, name, language, num_stars):
         self.name = name
         self.language = language
@@ -18,4 +14,6 @@ class GitHubRepo:
         return f"-> {self.name} is a {self.language} repo with {self.num_stars} stars."
 
     def __repr__(self):
-        return f'GitHubRepo({self.name}, {self.language}, {self.num_stars})'
+        return f'Repository({self.name}, {self.language}, {self.num_stars})'
+
+        
