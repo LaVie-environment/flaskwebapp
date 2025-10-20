@@ -11,4 +11,4 @@ The **api.py** module connects to the GitHub REST API to retrieve public reposit
 
 The **exceptions.py** centralizes error handling by defining a custom exception class called GitHubApiException. Any module that needs to report an API failure uses this custom exception.
 
-The point 
+<img width="1487" height="1008" alt="image" src="https://github.com/user-attachments/assets/6605fd22-d91f-4bb8-ad80-965cea0d9087" />
